@@ -14,7 +14,7 @@ import javax.swing.*;
 public class CuentaDeAhorros_Test {
 
     public static void main(String[] args) {
-
+ 
         String titular, numCta;
         double saldo;
         //lectura de variables: 
@@ -32,6 +32,9 @@ public class CuentaDeAhorros_Test {
         System.out.println("Titular: " + cta1.getTitular());
         System.out.println("Número de la cuenta: " + cta1.getNumCta());
         System.out.println("Saldo actual: " + cta1.getSaldo());
+        
+        //consignar
+        cta1.consignar(5000);
 
 // CuentaDeAhorros cta1 = new CuentaDeAhorros("   Ana López  ", "11", 50000);
         //System.out.println(cta1.toString());
@@ -82,7 +85,7 @@ class CuentaDeAhorros {
         if (consignacion > 0) {
             saldo += consignacion;
         } else {
-           JOPtionPane.showMessageDialog(null, "el valor "
+           JOptionPane.showMessageDialog(null, "el valor "
                     + "consignación es <=0", "ERROR CONSIGNACION", 0);
         }
     }
@@ -92,7 +95,7 @@ class CuentaDeAhorros {
         if (valorRetiro > 0 && saldo - valorRetiro >= 0) {
             saldo -= valorRetiro;
         } else {
-            JOPtionPane.showMessageDialog(null, "el valor "
+            JOptionPane.showMessageDialog(null, "el valor "
                     + "retiro es <=0 o no tiene saldo suficiente",
                     "ERROR CONSIGNACION", 0);
         }
